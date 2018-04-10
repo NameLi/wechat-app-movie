@@ -6,6 +6,8 @@
 ![二维码](https://github.com/NameLi/wechat-app-movie/blob/master/qrcode.jpg)
 
 
+## 部分机型存在横向滚动条问题，已修复提交了，等待微信审核通过
+
 ## 使用方法
 将 https://api.ixook.com 域名添加到微信白名单
 
