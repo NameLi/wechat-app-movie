@@ -8,3 +8,7 @@
 
 ## 使用方法
 将 https://api.ixook.com 域名添加到微信白名单
+
+
+## 效果演示
+地址 https://image.ixook.com/video-demo.mp4
