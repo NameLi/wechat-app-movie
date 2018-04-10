@@ -1,0 +1,10 @@
+.content {padding: 0 25rpx 20rpx;}
+.g_content {font-size: 14px;line-height: 28px;color: #444;padding-top: 20rpx;}
+.g_header {height: 40px;line-height: 40px;}
+.g_title {font-size: 14px;font-weight: bold;color: #333;}
+.g_title::before {display: inline-block;content: "";width: 4px;height: 16px;background: #EE4000;margin: -2px 6px 0 0;vertical-align: middle;}
+
+
+.item {height: 50px;line-height: 50px;display: flex;font-size: 14px;}
+.key {width: 100px;color: #444;}
+.val {color: #222;width: 0;flex: 1;}

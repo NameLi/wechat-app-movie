@@ -1,0 +1,8 @@
+.s_poster_wrapper {width: 270rpx;height: 150rpx;position: relative;}
+.s_shadow {position: absolute;left: 0;top: 0;width: 100%;height: 100%;border-radius: 3px;z-index: 1;background: rgba(0,0,0,.75);text-align: center;line-height: 150rpx;}
+.s_shadow text {font-size: 12px;color: #fff;}
+.s_play_btn {position: absolute;left: 0;top: 0;width: 100%;height: 100%;border-radius: 3px;z-index: 1;text-align: center;line-height: 150rpx;}
+.s_play_btn text {font-size: 26prpx;color: #fff;}
+.s_duration {position: absolute;right: 2px;bottom: 0;height: 40rpx;line-height: 40rpx;padding: 0 10rpx;background: rgba(0,0,0,.4);text-align: center;z-index: 2;color: #fff;font-size: 10px;}
+
+.s_poster {width: 270rpx;height: 150rpx;border-radius: 3px;}

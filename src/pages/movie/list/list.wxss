@@ -1,0 +1,32 @@
+ @import "/pages/component/movie-item/movie-item.wxss";
+ 
+.nav-wrapper {padding: 10rpx 0 0 20rpx;}
+.nav {padding: 10rpx 0;width: 100%;height: 28px;white-space: nowrap;}
+.nav view {display: inline-block;padding: 0 10px;margin-right: 5px;line-height: 28px;font-size: 15px;color: #333;}
+.nav .chosen {color: #f16c00; background: #f8f8f8;border-radius: 2px;}
+
+.movie-wrapper {margin: 20rpx 0 20rpx 18rpx;}
+.movie-item {margin: 0 10rpx 50rpx;}
+.movie-poster {width: 220rpx;height: 308rpx;}
+.movie-poster .poster {width: 220rpx;height: 308rpx;}
+
+/* 加载动画 */
+.spinner {margin: 0 auto;width: 50px;height: 20px;text-align: center;font-size: 10px;}
+.spinner view {height: 100%;width: 4px;display: inline-block;
+border-radius: 2px;animation: stretchdelay 1.2s infinite ease-in-out;margin: 0 2px;}
+
+.spinner .rect1 {background: #f16c00;}
+.spinner .rect2 {animation-delay: -1.1s;background: #f16c00;}
+.spinner .rect3 {animation-delay: -1.0s;background: #f16c00;}
+@keyframes stretchdelay {
+	0%, 40%, 100% {
+    opacity: 0.2;
+	  transform: scaleY(0.6);
+	} 20% {
+    opacity: .8;
+	  transform: scaleY(1.0);
+	}
+}
+
+.no-data {text-align: center;line-height: 30px;height: 30px;font-size: 12px;color: #999;}
+.nodata-icon {width: 200rpx;height: 200rpx;padding: 160rpx 0;}

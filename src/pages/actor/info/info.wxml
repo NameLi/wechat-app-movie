@@ -1,0 +1,58 @@
+<import src="/pages/component/movie-item/movie-item.wxml" />
+
+<view class='picture-wrapper' style='background: #{{actor.bg_color}}'>
+  <!-- <scroll-view class="actor-content" scroll-x="true"> -->
+  <image class='avatar' src='{{actor.avatar}}'></image>
+  <!-- </scroll-view> -->
+</view>
+
+<view class='nav-wrapper'>
+  <view class='nav'>
+    <view class='count'>{{actor.fans_count}}</view>
+    <view class='txt'>粉丝</view>
+  </view>
+  <view class='nav' catchtap='navigateTo' data-url='/pages/actor/info/works/works?id={{actor.id}}'>
+    <view class='count'>{{actor.works_count}}</view>
+    <view class='txt'>作品</view>
+  </view>
+</view>
+
+<view class='info-wrapper'>
+  <view class='info-header'>
+    <text class='info-title'>资料</text>
+  </view>
+
+  <view class='info-content'>
+    <view class='list'>
+      <text>生日：</text>
+      <text>{{actor.birthday ? actor.birthday : "未知"}}</text>
+    </view>
+    <view class='list'>
+      <text>出生地：</text>
+      <text>{{actor.born_place ? actor.born_place : "未知"}}</text>
+    </view>
+    <view class='summary'>
+      <text>简介：</text>
+      <text>{{actor.brief ? actor.brief : "暂无"}}</text>
+    </view>
+    <view class='more-info border_top' data-url='/pages/actor/info/detail/detail?id={{actor.id}}' catchtap='navigateTo'>查看详细资料 》</view>
+  </view>
+</view>
+
+<view class='info-wrapper' wxLif="{{actor.works_count > 0}}">
+  <view class='info-header' catchtap='navigateTo' data-url='/pages/actor/info/works/works?id={{actor.id}}'>
+    <text class='info-title'>参演作品</text>
+    <text class='info-count'>共 {{actor.works_count}} 部<text class='iconfont icon-right'></text></text>
+  </view>
+
+  <scroll-view class="scrollX-wrapper" scroll-x="true">
+    <block wx:for="{{actor.works}}">
+      <template is="movieItemTpl" data="{{...item}}" />
+    </block>
+  </scroll-view>
+
+</view>
+
+<view id="tip" wx:if="{{dialogTip}}">
+  <text>{{tipText}}</text>
+</view>

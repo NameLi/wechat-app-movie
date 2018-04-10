@@ -1,0 +1,9 @@
+@import "/pages/component/actor-column/actor-column.wxss";
+
+.header {height: 80rpx;background: #f5f5f5;font-size: 15px;line-height: 80rpx;padding: 0 25rpx;}
+.count {float: right;color: #999;}
+
+
+/* 骨架屏 */
+.skeleton_title {height: 80rpx;margin: 0 30rpx;background: #efefef;}
+.skeleton_line {height: 240rpx;margin: 20rpx 30rpx;background: #efefef;}

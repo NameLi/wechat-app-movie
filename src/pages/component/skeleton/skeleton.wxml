@@ -1,0 +1,11 @@
+<template name="skeletonTpl">
+  <view class='skeleton_wrapper' wx:if="{{loading}}">
+    <view class='skeleton_content'>
+      <view class='skeleton_item'></view>
+      <view class='skeleton_item'></view>
+      <view class='skeleton_item'></view>
+      <view class='skeleton_item'></view>
+      <view class='skeleton_item'></view>
+    </view>
+  </view>
+</template>

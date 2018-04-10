@@ -1,0 +1,113 @@
+<view>
+  <!--搜索框-->
+  <view class="search-wrapper">
+    <view class="search-inner">
+      <text class='iconfont icon-search'></text>
+      <input confirm-type="search" bindinput="doSearch" placeholder="找影视、影人" auto-focus bindconfirm="doSearch" value='{{keyword}}' focus='{{focus}}' />
+      <text wx:if="{{keyword}}" class='iconfont icon-clear clear-keyword' catchtap='clearKeyword'></text>
+    </view>
+    <text class="go-back" catchtap="navigateBack">取消</text>
+  </view>
+  <!--/搜索框-->
+
+  <view class='list-wrapper' style='display: {{keyword ? "none":"block"}}'>
+    <!--导航栏-->
+    <view class='nav-wrapper'>
+      <view class='nav-inner' data-url="/pages/movie/list/list" catchtap='navigateTo'>
+        <view class='nav'>
+          <text class='iconfont icon-movie'></text>
+        </view>
+        <text class='txt'>影视</text>
+      </view>
+      <view class='nav-inner' catchtap='showTip'>
+        <view class='nav'>
+          <text class='iconfont icon-actor'></text>
+        </view>
+        <text class='txt'>影人</text>
+      </view>
+      <view class='nav-inner' catchtap='showTip'>
+        <view class='nav'>
+          <text class='iconfont icon-zixun'></text>
+        </view>
+        <text class='txt'>影评</text>
+      </view>
+    </view>
+    <!--/导航栏-->
+
+    <!--搜索历史-->
+    <view class='history' wx:if="{{histories.length > 0}}">
+      <view class="title">搜索历史
+        <text class='iconfont icon-delete' catchtap='clearHistory'></text>
+      </view>
+      <view class='content'>
+        <text wx:for="{{histories}}" data-keyword="{{item}}" catchtap='searchHistory'>{{ item }}</text>
+      </view>
+    </view>
+    <!--/搜索历史-->
+  </view>
+
+  <view class='search-result' style='display: {{!keyword ? "none":"block"}}'>
+
+    <!--无搜索结果-->
+    <view class='result-tip' wx:if="{{!loading && movies.length == 0 && actors.length == 0}}">没有找到相关结果 o(╥﹏╥)o</view>
+
+    <view class='result-tip' wx:if="{{loading}}">努力加载中 (●′ω`●)</view>
+    <!--/无搜索结果-->
+
+    <!--影视搜索结果-->
+    <view class='result-wrapper' style="display: {{movies.length > 0 ? 'block': 'none'}}">
+      <view class='result-title'>影视</view>
+
+      <view class='result-list' wx:for="{{movies}}" data-movie-id="{{item.id}}" catchtap='goPath'>
+        <image class="poster" src='{{item.poster}}'></image>
+        <view class='info'>
+          <view class='name-wrapper'>
+            <view class="name">
+              <block wx:for="{{item.title}}" wx:for-item="word">
+                <text wx:if="{{word == keyword}}" class='keyword'>{{word}}</text>
+                <text wx:else>{{word}}</text>
+              </block>
+            </view>
+            <view class='rating' wx:if="{{item.rating}}">{{item.rating}}
+              <text>分</text>
+            </view>
+            <view class='rating-no' wx:else>暂无评分</view>
+          </view>
+          <view class='genre'>{{item.genres}}</view>
+          <view class='release'>{{item.release_date}}</view>
+        </view>
+      </view>
+
+      <view wx:if="{{movies.length == 6 }}" class='more-info border_top' data-url="/pages/search/list/list?keyword={{keyword}}&type=movie" catchtap='navigateTo'>查看更多影视</view>
+    </view>
+    <!--/影视搜索结果-->
+
+    <!--影人搜索结果-->
+    <view class='result-wrapper' style="display: {{actors.length > 0 ? 'block': 'none'}}">
+      <view class='result-title'>影人</view>
+      <view class='result-list' wx:for="{{actors}}" data-actor-id="{{item.id}}" catchtap='goPath'>
+        <image class="poster" src='{{item.avatar}}'></image>
+        <view class='info'>
+          <view class='name-wrapper'>
+            <view class='name'>
+              <block wx:for="{{item.name}}" wx:for-item="word">
+                <text wx:if="{{word == keyword}}" class='keyword'>{{word}}</text>
+                <text wx:else>{{word}}</text>
+              </block>
+            </view>
+          </view>
+          <view class='genre'>{{item.born_place}}</view>
+          <view class='release'>{{item.birthday}}</view>
+        </view>
+      </view>
+
+      <view wx:if="{{actors.length == 6}}" class='more-info border_top' data-url="/pages/search/list/list?keyword={{keyword}}&type=actor" catchtap='navigateTo'>查看更多影人</view>
+    </view>
+    <!--/影人搜索结果-->
+
+  </view>
+</view>
+
+<view id="tip" wx:if="{{dialogTip}}">
+  <text>{{tipText}}</text>
+</view>

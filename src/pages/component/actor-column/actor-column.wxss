@@ -1,0 +1,14 @@
+
+.actor-item {display: flex;padding: 26rpx 0;margin: 0 25rpx;position: relative;}
+
+.poster-wrapper{width: 178rpx;height: 220rpx;position: relative;overflow: hidden;}
+.poster {width: 158rpx;height: 220rpx;border-radius: 4rpx;}
+
+.info {flex: 1;width: 0;}
+.title{display: flex;}
+.name {font-size: 16px;color: #333;flex: 1;width: 0;}
+.rating {width: 80px;text-align: right;font-size: 14px;color: #f16c00;}
+.rating .value {font-size: 14px;font-weight: bold;}
+.rating text {font-size: 10px;padding: 0 2px;}
+
+.tag {font-size: 12px;color: #999;padding-top: 12rpx;}

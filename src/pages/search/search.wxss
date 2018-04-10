@@ -1,0 +1,46 @@
+/*搜索栏*/
+.search-wrapper {z-index: 99;position: fixed;left: 0;top: 0;width: 100%;height: 40px;background: #fff;display: flex;}
+.search-inner {margin: 5px 0;position: relative;height: 30px;margin-left: 3%;background: #f7f7f7;border-radius: 3px;flex: 1;display: flex;}
+.icon-search {padding: 0 6px;line-height: 30px;color: #999;font-size: 16px;}
+.search-inner input {color: #999;font-size: 14px;height: 30px;line-height: 30px;border: none;width: 100%;}
+
+/**/
+.clear-keyword {padding: 0 6px;line-height: 30px;color: #ccc;font-size: 22px;}
+.go-back {display: block;width: 50px;height: 40px;text-align: center;line-height: 40px;color: #666;font-size: 14px;}
+
+.list-wrapper {margin-top: 45px;padding: 0 15px;}
+
+
+/*导航栏*/
+.nav-wrapper {padding: 30rpx 30rpx 20px;display: flex;}
+.nav-inner {flex: 1;text-align: center;margin: 0 auto;}
+.nav {width: 80rpx;height: 80rpx;line-height: 80rpx;text-align: center;box-shadow: 0 2px 10px #eee;border-radius: 50%;display: inline-block;}
+.nav .iconfont {font-size: 24px;color: #666;display: inline-block;}
+.txt {font-size: 12px;color: #666;display: block;height: 30px;line-height: 30px;}
+.nav-inner .nav .nav-actived {color: red;}
+
+/* .history {} */
+.icon-delete {font-size: 16px;float: right;padding: 0 3px;}
+.content {padding: 6px 0;}
+.content text{display: inline-block;padding: 6px 10px;color: #666;margin: 7px 7px 7px 0;font-size: 14px;background: #f9f9f9;}
+
+.title {line-height: 30px;color: #666;font-size: 14px;}
+.title > i {width: 30px;text-align: center;}
+
+.search-result {margin-top: 45px;}
+.result-wrapper {padding: 0 25rpx;border-bottom: 26rpx solid #efefef;}
+.result-title {height: 40px;line-height: 50px;font-size: 14px;color: #666;}
+.result-list {display: flex;padding: 20rpx 0;border-bottom: 10rpx;}
+.poster {width: 105rpx;height: 150rpx;display: block;border-radius: 1px;}
+.info {flex: 1;padding-left:12px;width: 0;}
+.name-wrapper{display: flex;}
+.name {font-size: 14px;color: #444;font-weight: 700;flex: 1;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width: 0;}
+.rating {width: 100rpx;text-align: right;font-size: 14px;color: #f16c00;}
+.rating text {font-size: 10px;padding: 0 2px;}
+.rating-no {font-size: 12px;color: #888;}
+.keyword {color: #f16c00;}
+.genre, .release {font-size: 12px;color: #999;padding-top: 10rpx}
+
+.result-tip {height: 30px;line-height: 30px;color: #999;text-align: center;font-size: 14px;margin-top: 60%;}
+
+.more-info {height: 85rpx;line-height: 85rpx;text-align: center;font-size: 14px;color: #f16c00;}

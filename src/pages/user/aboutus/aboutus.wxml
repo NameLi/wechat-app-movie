@@ -1,0 +1,39 @@
+<view class='content'>
+  <view class='web-info'>
+    <view class='logo-wrapper'>
+      <text class='iconfont icon-logo'></text>
+    </view>
+    <view class='web-name'>冰橙电影</view>
+  </view>
+
+  <view class='info'>
+    <view class='l-wrapper'>
+      <view class='l-title'>关于我们</view>
+      <view class='l-content'>
+        <text decode="true" space="emsp">  {{info.aboutus}}</text>
+      </view>
+    </view>
+
+    <view class='l-wrapper'>
+      <view class='l-title'>联系我们</view>
+
+      <view class='l-content' wx:for="{{info.contacts}}">
+        <text decode="true" space="emsp">  {{item.key}}</text>
+        <text data-content="{{item.value}}" catchtap='getClipboard' class='l-clip'>{{item.value}} (点击复制)</text>
+      </view>
+    </view>
+
+    <view class='l-wrapper'>
+      <view class='l-title'>关于作者</view>
+      <view class='l-content'>
+        <text decode="true" space="emsp">  {{info.author}}</text>
+      </view>
+    </view>
+
+  </view>
+</view>
+
+
+<view id="tip" wx:if="{{dialogTip}}">
+  <text>{{tipText}}</text>
+</view>

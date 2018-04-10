@@ -1,0 +1,3 @@
+<template name="loadMoreTpl">
+  <view class='noMoreData'>{{noMoreData ? '没有更多数据了 o(╥﹏╥)o' : '加载中...'}}</view>
+</template>

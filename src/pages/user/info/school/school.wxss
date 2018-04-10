@@ -1,0 +1,8 @@
+.search-wrapper {height: 40px;position: fixed;left: 0;top: 0;width: 100%;background: #fff;}
+.search {padding: 0 6px;margin: 5px 10px;background: #efefef;font-size: 13px;height: 30px;}
+.clear-keyword {padding: 0 6px;line-height: 30px;color: #ccc;font-size: 22px;position: absolute;right: 10px;top: 5px;z-index: 99;}
+
+.list-wrapper {margin: 50px 20px 10px;background: #fff;}
+.item {font-size: 15px;color: #333;line-height: 44px;}
+
+.nodata {margin-top: 300rpx;text-align: center;font-size: 14px;color: #888;}

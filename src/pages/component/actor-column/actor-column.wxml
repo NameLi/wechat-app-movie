@@ -1,0 +1,26 @@
+<template name="actorTpl">
+
+  <view class='actor-item border_bottom'  data-id="{{id}}" catchtap='navigateToActor'>
+    <view class='poster-wrapper'>
+      <image class="poster" mode='scaleToFill' src='{{avatar}}'></image>
+    </view>
+
+    <view class='info'>
+      <view class='title'>
+        <view class="name ellipsis">
+          <text>{{name}}</text>
+        </view>
+        <view class='rating'>
+          <text class='value'>{{fans_count}}</text>
+           <text>粉丝</text> 
+        </view>
+      </view>
+
+      <view class='tag ellipsis'>{{name_en}}</view>
+      <view class='tag ellipsis' wx:if="{{birthday}}">{{birthday}}</view>
+      <view class='tag ellipsis' wx:if="{{born_place}}">{{born_place}}</view>
+      <view class='tag ellipsis' wx:if="{{act}}">{{act}}</view>
+      
+    </view>
+  </view>
+</template>

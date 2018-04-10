@@ -1,0 +1,45 @@
+<import src="/pages/component/comment/comment" />
+<import src="/pages/component/loadmore/loadmore.wxml" />
+
+<!-- 骨架屏 -->
+<view class='skeleton_wrapper' wx:if="{{loading}}">
+  <view class='skeleton_content'>
+    <view class='skeleton_item' wx:for="{{skeleton}}">
+      <view class='s_avatar'></view>
+      <view class='s_main'>
+        <view class='s_title'></view>
+        <view class='s_text'></view>
+        <view class='s_text'></view>
+        <view class='s_text_half'></view>
+      </view>
+    </view>
+  </view>
+</view><!-- 骨架屏 -->
+
+
+
+<view class='comment-wrapper'>
+  <block wx:for="{{comments}}">
+    <template is="commentTpl" data="{{...item}}" />
+  </block>
+</view>
+
+<template is="loadMoreTpl" data="{{noMoreData}}" />
+
+
+<view id='_shade' style='display: {{dialogShadow ? "block" : "none"}}' catchtap='closeShade'></view>
+<view id='_tool' style='display: {{dialogShadow ? "block" : "none"}}'>
+  <view class='_item borderBtm' catchtap='lowerComment'>
+    <text class='iconfont icon-lower'></text>
+    <text>踩评论</text>
+  </view>
+  <view class='_item' catchtap='reportComment'>
+    <text class='iconfont icon-jubao1'></text>
+    <text>举报</text>
+  </view>
+</view>
+
+
+<view id="tip" wx:if="{{dialogTip}}">
+  <text>{{tipText}}</text>
+</view>

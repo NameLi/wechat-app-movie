@@ -1,0 +1,41 @@
+<import src="/pages/component/actor-column/actor-column.wxml" />
+
+
+<!-- 骨架屏 -->
+<view class='skeleton_wrapper' wx:if="{{loading}}">
+  <view class='skeleton_content'>
+    <view class='skeleton_title'></view>
+    <view class='skeleton_line'></view>
+    <view class='skeleton_line'></view>
+    <view class='skeleton_line'></view>
+    <view class='skeleton_line'></view>
+  </view>
+</view>
+<!-- 骨架屏 -->
+
+
+<view>
+  <view class='actor-wrapper'>
+    <view class='header'>
+      <text>导演</text>
+      <text class='count'>{{directors.length}} 人</text>
+    </view>
+
+    <block wx:for="{{directors}}">
+      <template is="actorTpl" data="{{...item}}" />
+    </block>
+
+  </view>
+
+  <view class='actor-wrapper'>
+    <view class='header'>
+      <text>演员</text>
+      <text class='count'>{{actors.length}} 人</text>
+    </view>
+
+    <block wx:for="{{actors}}">
+      <template is="actorTpl" data="{{...item}}" />
+    </block>
+
+  </view>
+</view>

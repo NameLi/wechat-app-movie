@@ -1,0 +1,36 @@
+<template name="movieColumnTpl">
+  <view class='movie-item border_bottom' data-id="{{id}}" catchtap='navigateToMovie'>
+
+    <view class='poster-wrapper'>
+
+      <view class='sort' wx:if="{{index+1}}">
+        <text class='sort-bg'></text>
+        <text class='sort-value'>{{index+1}}</text>
+      </view>
+
+      <image class="poster" mode='scaleToFill' lazy-load="true" src='{{poster}}'></image>
+      
+    </view>
+
+    <view class='info'>
+      <view class='title'>
+        <view class="name ellipsis">
+          <text>{{title}}</text>
+        </view>
+        <view class='rating' wx:if="{{rating > 0}}">
+          <text class='value'>{{rating}}</text>
+          <text>分</text>
+        </view>
+        <view class='rating' wx:else>
+          <text class='no_rating'>暂无评分</text>
+        </view>
+      </view>
+
+      <view class='tag ellipsis'>{{countries}}</view>
+      <view class='tag ellipsis'>{{genres}}</view>
+      <view class='tag ellipsis' wx:if="{{release_date}}">{{release_date}}</view>
+      <view class='tag ellipsis' wx:if="{{tags}}">{{tags}}</view>
+
+    </view>
+  </view>
+</template>

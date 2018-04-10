@@ -1,0 +1,17 @@
+<view class='content'>
+  <view class='search-wrapper'>
+    <input confirm-type="search" bindinput="doSearch" placeholder="请输入学校名称" auto-focus bindconfirm="doSearch" class='search' value='{{keyword}}' focus='{{focus}}' />
+    <text wx:if="{{keyword}}" class='iconfont icon-clear clear-keyword' catchtap='clearKeyword'></text>
+  </view>
+
+  <view class='list-wrapper' wx:if="{{schools.length}}">
+    <view class='item' wx:for="{{schools}}" data-id='{{item.id}}' catchtap='chosenSchool'>{{item.name}}</view>
+  </view>
+  <view class='nodata' style="display: {{(nodata && keyword != '') ? 'block' : 'none'}}">
+    <text>没有找到相关学校 o(╥﹏╥)o</text>
+  </view>
+</view>
+
+<view id="tip" wx:if="{{dialogTip}}">
+  <text>{{msg}}</text>
+</view>

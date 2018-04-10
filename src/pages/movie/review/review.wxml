@@ -1,0 +1,15 @@
+<import src="/pages/component/review/review" />
+<import src="/pages/component/skeleton/skeleton.wxml" />
+<import src="/pages/component/loadmore/loadmore.wxml" />
+
+<!--骨架屏-->
+<template is="skeletonTpl" data="{{loading}}" />
+
+
+<view class='review-wrapper'>
+  <block wx:for="{{reviews}}">
+    <template is="reviewTpl" data="{{...item}}" />
+  </block>
+</view>
+
+<template is="loadMoreTpl" data="{{noMoreData}}" />

@@ -1,0 +1,7 @@
+{
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "冰橙电影",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 50
+}

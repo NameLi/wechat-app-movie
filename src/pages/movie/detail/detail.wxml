@@ -1,0 +1,206 @@
+<import src="/pages/component/movie-item/movie-item.wxml" />
+<import src="/pages/component/comment/comment" />
+<import src="/pages/component/review/review" />
+
+<!-- 骨架屏 -->
+<view class='skeleton_bg' wx:if="{{loading}}">
+  <view class='skeleton_main'>
+    <view class='skeleton_banner'></view>
+    <view class='skeleton_block'></view>
+    <view class='skeleton_line'></view>
+    <view class='skeleton_line'></view>
+    <view class='skeleton_line'></view>
+    <view class='skeleton_line'></view>
+    <view class='skeleton_line'></view>
+    <view class='skeleton_line'></view>
+  </view>
+</view>
+<!-- 骨架屏 -->
+
+
+<view>
+  <view id='poster-wrapper' style='background: #{{movie.bg_color}}'>
+    <image id='poster' src='{{movie.poster}}'></image>
+  </view>
+
+  <view id='info' catchtap='dialogInfo'>
+    <view class='title'>
+      <text>{{movie.title}}</text>
+    </view>
+    <view class='star-wrapper'>
+
+      <view class="stars" wx:if="{{movie.stars}}">
+        <block wx:for="{{movie.stars}}">
+          <image wx:if="{{item == 2}}" src="/images/star-all.png"></image>
+          <image wx:if="{{item == 1}}" src="/images/star-half.png"></image>
+          <image wx:if="{{item == 0}}" src="/images/star-none.png"></image>
+        </block>
+      </view>
+
+      <text class='rating' wx:if="{{movie.rating }}">{{movie.rating }}</text>
+      <text class='rating-no' wx:else>暂无评分</text>
+    </view>
+    <view class='info'>
+      <text>{{movie.year}} | </text>
+      <text>{{movie.countries}} | </text>
+      <text class='genre'>{{movie.genres}} | </text>
+      <text wx:if="{{movie.durations}}">{{movie.durations}} 分钟</text>
+    </view>
+  </view>
+
+  <view class='_common_wrapper' catchtap='dialogInfo' wx:if="{{movie.intro}}">
+    <view class='_header'>
+      <text class='_title'>简介</text>
+      <view class='_subtitle _right'>
+        <text>详情</text>
+        <text class='iconfont icon-right'></text>
+      </view>
+    </view>
+
+    <view class="_content">
+      <view class='ellipsis_line_3'>{{movie.intro}}</view>
+    </view>
+  </view>
+
+  <view class='_common_wrapper' wx:if="{{movie.actors.length > 0}}">
+    <view class='_header'>
+      <text class='_title'>演员</text>
+    </view>
+
+    <scroll-view class="scrollX-wrapper" scroll-x="true">
+      <view class='actor-wrapper' wx:for="{{movie.actors}}" data-id="{{item.id}}" catchtap='navigateToActor'>
+        <image class='actor-pic' lazy-load src='{{item.avatar}}'></image>
+
+        <view class='act'>
+          <text class='name'>{{item.name}}</text>
+          <text wx:if="{{item.type == 1}}">导演</text>
+          <text wx:if="{{item.type == 2 && item.act}}">饰 {{item.act}}</text>
+        </view>
+      </view>
+    </scroll-view>
+
+    <view class='more-info border_top' wx:if="{{movie.actors_count > 8}}" data-url="/pages/actor/list/list?id={{movie.id}}" catchtap='navigateTo'>查看全部 {{movie.actors_count}} 位演员</view>
+  </view>
+
+  <view class='_common_wrapper' wx:if="{{comments.data.length > 0}}">
+    <view class='_header'>
+      <text class='_title'>用户短评</text>
+      <view class='_subtitle _right' data-url="/pages/movie/comment/comment?id={{movie.id}}" catchtap='navigateTo'>
+        <text>更多</text>
+        <text class='iconfont icon-right'></text>
+      </view>
+    </view>
+
+    <view class='comment-wrapper'>
+      <block wx:for="{{comments.data}}">
+        <template is="commentTpl" data="{{...item}}" />
+      </block>
+    </view>
+
+    <view class='more-info border_top' data-url="/pages/movie/comment/comment?id={{movie.id}}" catchtap='navigateTo'>查看全部评论</view>
+
+  </view>
+</view>
+
+<view class='_common_wrapper' wx:if="{{reviews.data.length > 0}}">
+  <view class='_header'>
+    <text class='_title'>用户长评</text>
+    <view class='_subtitle _right' data-url="/pages/movie/review/review?id={{movie.id}}" catchtap='navigateTo'>
+      <text>更多</text>
+      <text class='iconfont icon-right'></text>
+    </view>
+  </view>
+  <view class='review-wrapper'>
+    <view>
+      <block wx:for="{{reviews.data}}">
+        <template is="reviewTpl" data="{{...item}}" />
+      </block>
+    </view>
+
+    <view class='more-info border_top' data-url="/pages/movie/review/review?id={{movie.id}}" catchtap='navigateTo'>查看全部长评</view>
+  </view>
+</view>
+
+<view class='_common_wrapper' wx:if="{{movie.likes.length > 0}}">
+  <view class='_header'>
+    <text class='_title'>相关影视</text>
+  </view>
+
+  <scroll-view class="scrollX-wrapper" scroll-x="true">
+    <block wx:for="{{movie.likes}}">
+      <template is="movieItemTpl" data="{{...item}}" />
+    </block>
+  </scroll-view>
+
+</view>
+
+
+<!-- 详细信息模态框 -->
+<view id='fixedInfo' wx:if="{{dialogInfo}}">
+  <scroll-view scroll-y style="height: 100%;" catchtap='toClose'>
+    <view class='info-content'>
+      <view class='g_content'>
+        <view class='g_header'>
+          <view class='g_title'>基本信息</view>
+        </view>
+        <view class='item border_bottom'>
+          <view class='key'>片名：</view>
+          <view class='val'>{{movie.title}}</view>
+        </view>
+        <view class='item border_bottom' wx:if="{{movie.original_title}}">
+          <view class='key'>原名：</view>
+          <view class='val {{movie.original_title.length > 28 ? "font10":""}}'>
+            <text>{{movie.original_title}}</text>
+          </view>
+        </view>
+        <view class='item border_bottom'>
+          <view class='key'>类型：</view>
+          <view class='val'>{{movie.genres}}</view>
+        </view>
+        <view class='item border_bottom'>
+          <view class='key'>上映：</view>
+          <view class='val'>{{movie.release_date ? movie.release_date : "未知"}}</view>
+        </view>
+        <view class='item border_bottom' wx:if="{{movie.season}}">
+          <view class='key'>季数：</view>
+          <view class='val'>第 {{movie.season}} 季</view>
+        </view>
+        <view class='item border_bottom' wx:if="{{movie.episodes}}">
+          <view class='key'>集数：</view>
+          <view class='val'>共 {{movie.episodes}} 集</view>
+        </view>
+        <view class='item border_bottom'>
+          <view class='key'>片长：</view>
+          <view class='val'>{{movie.durations ? movie.durations + " 分钟" : "未知"}}</view>
+        </view>
+        <view class='item border_bottom'>
+          <view class='key'>地区：</view>
+          <view class='val'>{{movie.countries ? movie.countries : "未知"}}</view>
+        </view>
+        <view class='item border_bottom'>
+          <view class='key'>语言：</view>
+          <view class='val'>{{movie.languages ? movie.languages : "未知"}}</view>
+        </view>
+      </view>
+
+      <view class='g_content'>
+        <view class='g_header'>
+          <view class='g_title'>简介</view>
+        </view>
+        <view class='g_text'>
+          <text>{{movie.summary}}</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <view class='close-info' catchtap='toClose'>
+    <text class='iconfont icon-clear'></text>
+  </view>
+
+</view>
+
+
+<view id="tip" wx:if="{{dialogTip}}">
+  <text>{{msg}}</text>
+</view>

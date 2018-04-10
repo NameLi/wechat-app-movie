@@ -1,0 +1,13 @@
+<view class='wrapper'>
+  <view class='item'>
+    <view class='key'>应用名称</view>
+    <view class='val'>冰橙电影</view>
+  </view>
+  <view class='item'>
+    <view class='key'>开发者</view>
+    <view class='val'>冰糖雪梨</view>
+  </view>
+
+</view>
+
+<button class='submit' catchtap="logout">退出登录</button>

@@ -1,0 +1,33 @@
+@import '/pages/component/comment/comment.wxss';
+
+.review-wrapper {padding: 8px 15px;}
+
+.title {font-size: 22px;font-weight: bold;padding: 10px 0;}
+.author {display: flex;padding: 10px 0;}
+.author .avatar-wrapper {width: 45px;}
+.author .avatar {width: 38px;height: 38px;border-radius: 50%;}
+.author .info {flex: 1;}
+.info-first {font-size: 12px;height: 22px;}
+.info .name{color: #333;font-weight: bold;font-size: 16px;}
+.info .date {color: #777;font-size: 12px;}
+.author-tool {flex: 1;display: flex;color: #777;}
+.date {flex: 1;}
+.read {width: 100px;text-align: right;font-size: 12px;}
+.review-content {padding: 15px 0;}
+.review-content text {font-size: 17px;line-height: 30px;color: #444;word-break:break-all;}
+
+
+/**/
+.feel-wrapper {height: 60px;text-align: center;display: flex;justify-content:space-between;}
+.feel {width: 330rpx;height: 45px;line-height: 45px;color: #555;font-size: 14px;border-radius: 5px;background: #f5f5f5;font-weight: bold;}
+.feel text {display: inline-block;vertical-align: top;}
+.icon-upper, .icon-lower {font-size: 20px;padding-right: 4px;}
+
+
+.comment-wrapper {padding: 10px 10px 0;}
+
+
+/* 骨架屏 */
+.b_title {height: 80rpx;margin: 10px 30rpx;background: #efefef;}
+.b_author {height: 120rpx;margin: 10px 30rpx 20px;background: #efefef;}
+.b_line {height: 50rpx;margin: 10px 30rpx;background: #efefef;}

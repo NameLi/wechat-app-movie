@@ -1,0 +1,49 @@
+<view class='content'>
+  <view class='g_content'>
+    <view class='g_header'>
+      <view class='g_title'>基本信息</view>
+    </view>
+    <view class='item border_bottom'>
+      <view class='key'>中文名</view>
+      <view class='val'>{{actor.name}}</view>
+    </view>
+    <view class='item border_bottom' wx:if="{{actor.name_en}}">
+      <view class='key'>英文名</view>
+      <view class='val ellipsis'>{{actor.name_en}}</view>
+    </view>
+    <view class='item border_bottom'>
+      <view class='key'>出生日期</view>
+      <view class='val'>{{actor.birthday ? actor.birthday : '未知'}}</view>
+    </view>
+    <view class='item border_bottom'>
+      <view class='key'>职业</view>
+      <view class='val'>{{actor.professions ? actor.professions : '未知'}}</view>
+    </view>
+    <view class='item border_bottom'>
+      <view class='key'>国籍</view>
+      <view class='val'>{{actor.country ? actor.country : '未知'}}</view>
+    </view>
+    <view class='item border_bottom'>
+      <view class='key'>出生地</view>
+      <view class='val ellipsis'>{{actor.born_place ? actor.born_place : '未知'}}</view>
+    </view>
+    <view class='item border_bottom'>
+      <view class='key'>性别</view>
+      <view class='val'>{{actor.sex ? actor.sex : "未知"}}</view>
+    </view>
+    <view class='item border_bottom'>
+      <view class='key'>星座</view>
+      <view class='val'>{{actor.constellation ? actor.constellation : "未知"}}</view>
+    </view>
+  </view>
+
+  <view class='g_content'>
+    <view class='g_header'>
+      <view class='g_title'>简介</view>
+    </view>
+    <view class='g_content'>
+      <text>{{actor.summary ? actor.summary : "暂无"}}</text>
+    </view>
+  </view>
+
+</view>

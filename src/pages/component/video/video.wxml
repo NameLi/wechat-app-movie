@@ -1,0 +1,12 @@
+<template name="videoTpl">
+  <view class='s_poster_wrapper'>
+    <view class='s_shadow' wx:if="{{playId == id}}">
+      <text>播放中</text>
+    </view>
+    <view class='s_play_btn' wx:else>
+      <text class='iconfont icon-bofang3'></text>
+    </view>
+    <image class='s_poster' lazy-load src='{{poster}}'></image>
+    <view class='s_duration'>{{duration}}</view>
+  </view>
+</template>

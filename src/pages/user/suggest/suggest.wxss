@@ -1,0 +1,5 @@
+.content {padding: 25rpx;}
+.textarea-wrapper {display: flex;}
+.textarea {background: #e6e6e6;padding: 8px;border-radius: 2px;flex: 1;height: 100px;font-size: 14px;}
+
+.submit {margin-top: 20px;height: 40px;background: #ffd200;text-align: center;line-height: 40px;border-radius: 2px;color: #333;font-size: 15px;letter-spacing: 5px;}

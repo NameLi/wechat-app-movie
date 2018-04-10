@@ -1,0 +1,29 @@
+<template name="reviewTpl">
+
+  <view class='review' data-id='{{id}}' catchtap='toReviewDetail'>
+    <view class='r-header'>
+      <view class='r-title ellipsis'>{{title}}</view>
+
+      <!-- 评分 -->
+      <view class="_stars" wx:if="{{stars}}">
+        <block wx:for="{{stars}}">
+          <image wx:if="{{item == 1}}" src="/images/star-all.png"></image>
+          <image wx:if="{{item == 0}}" src="/images/star-none.png"></image>
+        </block>
+      </view>
+
+      <view wx:else class='_stars_null'>用户未评分</view>
+      <!-- /评分 -->
+
+    </view>
+
+    <view class='r-brief'>
+      <text class='overflow'>{{brief}}</text>
+    </view>
+
+    <view class='r-tool'>
+      {{like}} 赞 · {{comment}} 评论
+      <text class='r-date'>{{create_time}}</text>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,23 @@
+<import src="/pages/component/movie-column/movie-column.wxml" />
+<import src="/pages/component/skeleton/skeleton.wxml" />
+<import src="/pages/component/loadmore/loadmore.wxml" />
+
+
+<template is="skeletonTpl" data="{{loading}}" />
+
+<!-- 页面不显示，计算像素高度用的，暂时未找到更好办法 -->
+<view id='computedHeight'></view>
+<!-- END -->
+
+<block wx:for="{{movies}}">
+  <view class='header'>
+    <text class='year'>{{item.date}}</text>
+    <text class='count'>{{item.count}} 部</text>
+  </view>
+
+  <block wx:for="{{item.movies}}">
+    <template is="movieColumnTpl" data="{{...item}}" />
+  </block>
+</block>
+
+<template is="loadMoreTpl" data="{{noMoreData}}" />

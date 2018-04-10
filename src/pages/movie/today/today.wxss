@@ -1,0 +1,8 @@
+@import "/pages/component/movie-column/movie-column.wxss";
+
+
+#computedHeight {height: 272rpx;position: absolute;top: -999px;}
+
+.header {padding: 0 25rpx;height: 80rpx;line-height: 80rpx;background: #eee;}
+.header .year {font-size: 15px;color: #555;font-weight: bold;}
+.header .count {float: right;font-size: 12px;color: #666}

@@ -1,0 +1,13 @@
+<import src="/pages/component/movie-column/movie-column.wxml" />
+<import src="/pages/component/skeleton/skeleton.wxml" />
+<import src="/pages/component/loadmore/loadmore.wxml" />
+
+<template is="skeletonTpl" data="{{loading}}" />
+
+<view>
+  <block wx:for="{{movies}}">
+    <template is="movieColumnTpl" data="{{...item}}" />
+  </block>
+</view>
+
+<template is="loadMoreTpl" data="{{noMoreData}}" />

@@ -1,0 +1,25 @@
+ @import "../../component/movie-item/movie-item.wxss";
+page {background: #eee;}
+
+.picture-wrapper {height: 400rpx;background: #784830;text-align: center;padding: 20rpx 0 50rpx;}
+.avatar {width: 270rpx;height: 400rpx;}
+
+.love {position: absolute;right: 0;top: 0;width: 50px;height: 40px;line-height: 56px;z-index: 999;text-align: center;}
+.icon-save {width: 26px;height: 26px;}
+
+.nav-wrapper {display: flex;height: 60px;background: #fff;}
+.nav {flex: 1;text-align: center;}
+.nav .count {height: 30px;line-height: 42px;font-size: 16px;color: #ff0000;font-weight: bold;}
+.nav .txt {height: 20px;line-height: 26px;font-size: 11px;color: #999;}
+
+.info-wrapper {margin-top: 20rpx;background: #fff;}
+.info-header {height: 90rpx;line-height: 90rpx;padding: 0 15rpx 0 25rpx;position: relative;}
+.info-title {font-size: 15px;color: #333;font-weight: bold;}
+.info-count {float: right;color: #999;font-size: 13px;}
+.icon-right {padding-left: 3px;}
+.info-content {padding: 0 25rpx;}
+.list {font-size: 14px;color: #555;line-height: 28px;height: 28px;}
+.list text:nth-child(1){display: inline-block;}
+.summary {display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;margin-bottom: 10px;font-size: 14px;color: #555;line-height: 26px;}
+
+.more-info {height: 46px;line-height: 46px;text-align: center;font-size: 14px;color: #f16c00;}

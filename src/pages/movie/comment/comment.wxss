@@ -1,0 +1,23 @@
+@import "/pages/component/comment/comment.wxss";
+
+.comment-wrapper {padding-top: 10px;}
+
+/* 工具栏 */
+#_shade {position: fixed;left: 0;top: 0;height: 100%;width: 100%;background: rgba(0,0,0,0.55);z-index: 99;animation: shodow .1s ease-in-out;}
+@keyframes shodow
+{from {opacity: 0;}to {opacity: 1;}}
+
+#_tool {position: fixed;left: 0;bottom: 0;width: 100%;background: #fff;z-index: 998;animation: tool .1s ease-in-out;}
+@keyframes tool{from {height: 100px;}to {height: aoto;}}
+
+._item {height: 55px;line-height: 55px;font-size: 14px;padding: 0 15px;color: #666;}
+._item text {padding: 0 6px;font-size: 16px;color: #333;}
+
+
+/* 骨架屏 */
+.skeleton_item {height: 220rpx;margin: 30rpx 30rpx;display: flex;}
+.s_avatar {width: 60rpx;height: 60rpx;border-radius: 50%;background: #efefef;}
+.s_main {flex: 1;margin-left: 20rpx;}
+.s_title {height: 55rpx;background: #efefef;border-radius: 1px;}
+.s_text {margin-top: 10rpx;height: 35rpx;background: #efefef;}
+.s_text_half {margin-top: 10rpx;width: 40%;height: 40rpx;background: #efefef;}

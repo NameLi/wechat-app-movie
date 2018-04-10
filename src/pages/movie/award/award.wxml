@@ -1,0 +1,34 @@
+<import src="/pages/component/movie-column/movie-column.wxml" />
+<import src="/pages/component/skeleton/skeleton.wxml" />
+
+<!--骨架屏-->
+<template is="skeletonTpl" data="{{loading}}" />
+<!--骨架屏-->
+
+<!-- 选择菜单 -->
+<view class='menu_wrapper'>
+  <view class='menu_item border_bottom' data-type="before" catchtap='changeTerm'>
+    <text class='iconfont icon-up'></text>
+  </view>
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{terms}}">
+    <view class='menu'>第{{index + 1}}届</view>
+  </picker>
+  <view class='menu_item border_top' data-type="after" catchtap='changeTerm'>
+    <text class='iconfont icon-down'></text>
+  </view>
+</view>
+<!--选择菜单-->
+
+
+<!-- 内容区 -->
+<view class='content'>
+  <block wx:for="{{movies}}">
+    <template is="movieColumnTpl" data="{{...item}}" />
+  </block>
+</view>
+<!-- 内容区 -->
+
+
+<view id="tip" wx:if="{{dialogTip}}">
+  <text>{{tipText}}</text>
+</view>

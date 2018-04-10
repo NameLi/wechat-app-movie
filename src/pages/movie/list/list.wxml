@@ -1,0 +1,41 @@
+<import src="/pages/component/movie-item/movie-item.wxml" />
+
+
+<view class='nav-wrapper'>
+  <scroll-view class="nav" scroll-x="true">
+    <view wx:for="{{categories}}" wx:key="id" wx:for-index="idx" class="{{idx==categoryIdx ? 'chosen': ''}}" data-idx="{{idx}}" catchtap="ontapCategoryIdx">{{item}}</view>
+  </scroll-view>
+
+  <scroll-view class="nav" scroll-x="true">
+    <view wx:for="{{genres}}" wx:key="id" wx:for-index="idx" class="{{idx==genreIdx ? 'chosen': ''}}" data-idx="{{idx}}" catchtap="ontapGenreIdx">{{item}}</view>
+  </scroll-view>
+
+  <scroll-view class="nav" scroll-x="true">
+    <view wx:for="{{countries}}" wx:key="id" wx:for-index="idx" class="{{idx==countryIdx ? 'chosen': ''}}" data-idx="{{idx}}" catchtap="ontapCountryIdx">{{item}}</view>
+  </scroll-view>
+
+  <scroll-view class="nav" scroll-x="true">
+    <view wx:for="{{years}}" wx:key="id" wx:for-index="idx" class="{{idx==yearIdx ? 'chosen': ''}}" data-idx="{{idx}}" catchtap="ontapYearIdx">{{item}}</view>
+  </scroll-view>
+</view>
+
+<view class="movie-wrapper">
+  <block wx:for="{{movies}}">
+    <template is="movieItemTpl" data="{{...item}}" />
+  </block>
+</view>
+
+<!-- 加载动画 -->
+<view class='spinner' style="visibility: {{loading ? 'visible': 'hidden'}}">
+  <view class='rect1'></view>
+  <view class='rect2'></view>
+  <view class='rect3'></view>
+</view>
+
+<!-- 未找到数据 -->
+<view class="no-data" style="display: {{nodata ? 'block': 'none'}}">
+  <image class='nodata-icon' src='/images/no-data.png'></image>
+  <view>
+    <text>没有找到任何相关影视</text>
+  </view>
+</view>

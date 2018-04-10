@@ -1,0 +1,11 @@
+.movie-item {display: inline-flex;flex-direction: column;margin: 0 14rpx 50rpx;}
+
+.movie-poster {width: 200rpx;height: 296rpx;position: relative;}
+.movie-poster .poster {width: 200rpx;height: 296rpx;border-radius: 4rpx;}
+
+.movie-info {position: absolute;left: 0;bottom: 0;width: 100%;height: 44rpx;line-height: 44rpx;background: linear-gradient(to top, rgba(0,0,0,.3) 0%,rgba(0,0,0,0) 100%);z-index: 1;border-bottom-left-radius: 6rpx;border-bottom-right-radius: 6rpx;}
+.movie-info .episode {color: #fff;font-size: 12px;padding: 0 5px;vertical-align: top;float: left;}
+.movie-info .rating {color: #f16c00;float: right;font-size: 13px;padding: 0 5px;font-weight: bold;vertical-align: top;}
+.no_rating {color: #888;float: right;font-size: 12px;padding: 0 5px;vertical-align: top;}
+
+.movie-title {width: 200rpx;margin-top: 10rpx;overflow: hidden;font-size: 14px;text-align: center;text-overflow: ellipsis;white-space: nowrap;}

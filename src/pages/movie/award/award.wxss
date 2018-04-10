@@ -1,0 +1,5 @@
+@import "/pages/component/movie-column/movie-column.wxss";
+
+.menu_wrapper {position: fixed;right: 20px;top: 40%;width: 50px;background: rgba(0,0,0,0.45);z-index: 999;border-radius: 2px;}
+.menu {height: 36px;font-size: 13px;color: #fff;line-height: 36px;text-align: center;}
+.menu_item {height: 30px;text-align: center;color: #fff;line-height: 30px;}

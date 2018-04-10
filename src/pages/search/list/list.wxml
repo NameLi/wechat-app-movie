@@ -1,0 +1,21 @@
+<import src="/pages/component/movie-column/movie-column.wxml" />
+<import src="/pages/component/actor-column/actor-column.wxml" />
+
+<import src="/pages/component/skeleton/skeleton.wxml" />
+<import src="/pages/component/loadmore/loadmore.wxml" />
+
+<template is="skeletonTpl" data="{{loading}}" />
+
+<block wx:if="{{type== 'movie'}}">
+  <block wx:for="{{list}}">
+    <template is="movieColumnTpl" data="{{...item}}" />
+  </block>
+</block>
+
+<block wx:if="{{type== 'actor'}}">
+  <block wx:for="{{list}}">
+    <template is="actorTpl" data="{{...item}}" />
+  </block>
+</block>
+
+<template is="loadMoreTpl" data="{{noMoreData}}" />

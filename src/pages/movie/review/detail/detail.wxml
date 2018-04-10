@@ -1,0 +1,104 @@
+<import src="/pages/component/loadmore/loadmore.wxml" />
+
+<!-- 骨架屏 -->
+<view class='skeleton_wrapper' wx:if="{{loading}}">
+  <view class='skeleton_content'>
+    <view class='b_title'></view>
+
+    <view class='b_author'></view>
+    <view class='b_content'>
+      <view class='b_line'></view>
+      <view class='b_line'></view>
+      <view class='b_line'></view>
+      <view class='b_line'></view>
+      <view class='b_line'></view>
+      <view class='b_line'></view>
+      <view class='b_line'></view>
+      <view class='b_line'></view>
+      <view class='b_line'></view>
+      <view class='b_line'></view>
+      <view class='b_line'></view>
+      <view class='b_line'></view>
+      <view class='b_line'></view>
+      <view class='b_line'></view>
+    </view>
+  </view>
+</view>
+<!-- 骨架屏 -->
+
+
+<view class='review-wrapper'>
+  <view class='title'>{{review.title}}</view>
+  <view class='author'>
+    <view class='avatar-wrapper'>
+      <image class='avatar' src='{{review.author.avatar}}'></image>
+    </view>
+    <view class='info'>
+      <view class='info-first'>
+        <text class='name'>{{review.author.name}}</text>
+        <!-- 评分 -->
+        <view class="_stars _right" wx:if="{{review.stars}}">
+          <block wx:for="{{review.stars}}">
+            <image wx:if="{{item == 1}}" src="/images/star-all.png"></image>
+            <image wx:if="{{item == 0}}" src="/images/star-none.png"></image>
+          </block>
+        </view>
+
+        <view wx:else class='_stars_null _right'>用户未评分</view>
+        <!-- /评分 -->
+
+      </view>
+      <view class='author-tool'>
+        <view class='date'>{{review.create_time}}</view>
+        <view class='read'>{{review.read}} 阅读</view>
+      </view>
+    </view>
+  </view>
+
+  <view class='review-content'>
+    <text decode>{{review.content}}</text>
+  </view>
+
+
+  <view class='feel-wrapper'>
+    <view class='feel' data-feel="upper" catchtap='dofeel'>
+      <text class='iconfont icon-upper'></text>
+      <text>{{review.like}}</text>
+    </view>
+    <view class='feel' data-feel='down' catchtap='dofeel'>
+      <text class='iconfont icon-lower'></text>
+      <text>{{review.unlike}}</text>
+    </view>
+  </view>
+
+</view>
+
+<!-- 影评评论 -->
+<view class='comment-wrapper'>
+  <view class='_header'>
+    <view class='_title'>评论</view>
+  </view>
+  <view>
+    <view class='t_comment' wx:for="{{comments}}" catchtap='showTool'>
+      <view class='t_avatar-wrapper'>
+        <image class='t_avatar' src='{{item.avatar}}'></image>
+      </view>
+      <view class='t_main border_bottom'>
+        <view class='t_name'>{{item.name}}</view>
+        <view class='t_content'>
+          <text>{{item.content}}</text>
+        </view>
+        <view class='t_tool'>
+          <view class='t_date'>{{item.create_time}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <template is="loadMoreTpl" data="{{noMoreData}}" />
+
+</view>
+
+<view id="tip" wx:if="{{dialogTip}}">
+  <text>{{tipText}}</text>
+</view>

@@ -1,0 +1,44 @@
+page {background: #f1f6f9;}
+
+/* 顶部用户信息 */
+.user-wrapper {display: flex;padding: 10rpx 30rpx;height: 180rpx;background: #ffda44;}
+.user-wrapper .avatar-wrapper {width: 140rpx;position: relative;}
+.user-wrapper .avatar {width: 130rpx;height: 130rpx;border-radius: 50%;border: 5rpx solid #fff;}
+.user-wrapper .sex {position: absolute;right: 5rpx;top: 100rpx;width: 14px;height: 14px;font-size: 14px;border-radius: 50%;background: #fff;color: #14b4fe;text-align: center;line-height: 16px;font-weight: bold;padding: 1px;}
+.user-wrapper .info-wrapper {flex: 1;padding: 16rpx 0 0 20rpx;}
+.user-wrapper .info-name {height: 70rpx;}
+.user-wrapper .info-name .name {font-size: 20px;font-weight: 700;color: #555;line-height: 65rpx;}
+.user-wrapper .info-tags {height: 60rpx;}
+.user-wrapper .info-tags text {display: inline-block;padding: 2px 6px;background: #eee;font-size: 12px;margin-right: 4px;border-radius: 2px;background: rgba(0,0,0,.3);color: #fff;}
+
+.user-default-wrapper {padding: 0 30rpx;height: 200rpx;background: #ffda44;position: relative;}
+.login-title {height: 30px;line-height: 34px;color: #555;font-size: 24px;font-weight: 800;margin-top: -10rpx;}
+.login-wrapper {padding-top: 40rpx;height: 30px;}
+.login-btn {background: rgba(0,0,0,.4);display: inline-block;padding: 5px 14px;font-size: 16px;color: #fff;border-radius: 1px;}
+
+/*数据统计栏*/
+.nav-wrapper {display: flex;background: #fff;margin-bottom: 24rpx;}
+.nav  {flex: 1;height: 85px;text-align: center;}
+.nav .count {font-size: 16px;display: inline-block;width: 100%;line-height: 65px;height: 46px;color: #FF8C00;} 
+.nav .txt {font-size: 12px;display: inline-block;height: 40px;width: 100%;color: #555;}
+.nav .iconfont {font-size: 26px;display: inline-block;width: 100%;line-height: 70px;height: 40px;}
+.nav:nth-child(1) .iconfont {color: #32d784;}
+.nav:nth-child(2) .iconfont {color: #ff9902;}
+.nav:nth-child(3) .iconfont {color: #a570f3;}
+.nav:nth-child(4) .iconfont {color: #479eff;} 
+
+
+/*竖列菜单栏*/
+.menu-wrapper {background: #fff;margin-bottom: 24rpx;}
+.menu {height: 110rpx;line-height: 110rpx; display: flex;position: relative;padding-left: 6px;}
+.menu::before {position: absolute;left: 80rpx;bottom: 0;right: 0;height: 1px;content: "";background: #eee;transform: scaleY(0.4)}
+.tip {font-size: 12px;color: #999;}
+
+.menu text:nth-child(1) {display: block;width: 80rpx;font-size: 20px;text-align: center;color: #FF8C00;}
+.menu .icon-right {display: block;width: 80rpx;font-size: 14px;text-align: center;color: #aaa !important;}
+.menu .txt {flex: 1;font-size: 14px;color: #4a4b50;}
+
+/* .menu .iconfont:nth-child(1) {font-size: 20px;}
+.menu-wrapper .menu:nth-child(3n-2) .iconfont {color: #14b4fe;}
+.menu-wrapper .menu:nth-child(3n-1) .iconfont {color: #fb9e31;}
+.menu-wrapper .menu:nth-child(3n) .iconfont {color: #24c884;} */

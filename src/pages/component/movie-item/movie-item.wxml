@@ -1,0 +1,19 @@
+<template name="movieItemTpl">
+
+  <view class='movie-item' data-id="{{id}}" catchtap='navigateToMovie'>
+
+    <view class='movie-poster'>
+      <image class='poster' mode='scaleToFill' lazy-load="true" src="{{poster}}" />
+
+      <view class='movie-info'>
+        <text class='episode' wx:if="{{episodes}}">全{{episodes}}集</text>
+        
+        <text class='rating' wx:if="{{rating}}">{{rating}}</text>
+        <text class='no_rating' wx:else>暂无评分</text>
+      </view>
+    </view>
+
+    <view class='movie-title'>{{title}}</view>
+  </view>
+
+</template>

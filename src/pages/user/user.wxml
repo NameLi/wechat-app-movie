@@ -1,0 +1,77 @@
+<!-- 用户顶部账号信息 -->
+<view class='user-wrapper'>
+  <view class='avatar-wrapper'>
+    <image class='avatar' src='{{user.avatarUrl}}' />
+
+    <text class="iconfont icon-boy sex" wx:if="{{user.gender == 1}}"></text>
+    <text class="iconfont icon-girl sex" wx:elif="{{user.gender == 2}}"></text>
+    <text class="iconfont icon-unknown sex" wx:else></text>
+  </view>
+  <view class='info-wrapper'>
+    <view class='info-name'>
+      <text class='name'>{{user.nickName}}</text>
+    </view>
+    <view class='info-tags'>
+      <text wx:if="{{user.grade}}">{{user.grade}} 级</text>
+      <text wx:if="{{user.school}}">{{user.school}}</text>
+    </view>
+  </view>
+</view>
+
+<!-- 横排菜单 -->
+<view class="nav-wrapper">
+  <view class='nav' catchtap='forbid'>
+    <text class='iconfont icon-movie-love'></text>
+    <text class='txt'>电影收藏</text>
+  </view>
+  <view class='nav' catchtap='forbid'>
+    <text class='iconfont icon-actor-love'></text>
+    <text class='txt'>演员关注</text>
+  </view>
+  <view class='nav' catchtap='forbid'>
+    <text class='iconfont icon-video-love'></text>
+    <text class='txt'>视频收藏</text>
+  </view>
+  <view class='nav' catchtap='forbid'>
+    <text class='iconfont icon-review-love'></text>
+    <text class='txt'>影评收藏</text>
+  </view>
+</view>
+
+<!-- 竖列导航栏 -->
+<view class="menu-wrapper">
+  <view class='menu' data-url='/pages/user/info/info' catchtap='navigateTo'>
+    <text class="iconfont icon-me"></text>
+    <view class='txt'>个人资料</view>
+     <view class='tip' wx:if="{{user.percent}}">完善度{{user.percent}}%</view> 
+    <text class="iconfont icon-right"></text>
+  </view>
+   <view class='menu' catchtap='forbid'>
+    <text class="iconfont icon-jifen"></text>
+    <view class='txt'>积分成长</view>
+    <view class='tip' wx:if="{{user.score}}">{{user.score}} 积分</view>
+     <text class="iconfont icon-right"></text> 
+  </view> 
+  <view class='menu' data-url='/pages/user/suggest/suggest' catchtap='navigateTo'>
+    <text class="iconfont icon-feed"></text>
+    <view class='txt'>意见反馈</view>
+    <text class="iconfont icon-right"></text>
+  </view>
+  <view class='menu' data-url='/pages/user/aboutus/aboutus' catchtap='navigateTo'>
+    <text class="iconfont icon-aboutus"></text>
+    <view class='txt'>关于我们</view>
+    <text class="iconfont icon-right"></text>
+  </view>
+</view>
+
+<view class="menu-wrapper">
+  <view class='menu' data-url='/pages/user/system/system' catchtap='navigateTo'>
+    <text class="iconfont icon-set"></text>
+    <view class='txt'>账号设置</view>
+    <text class="iconfont icon-right"></text>
+  </view>
+</view>
+
+<view id="tip" wx:if="{{dialogTip}}">
+  <text>{{tipText}}</text>
+</view>

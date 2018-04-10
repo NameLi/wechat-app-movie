@@ -1,0 +1,73 @@
+<view class='content'>
+  <view class='wrapper'>
+    <view class='item border_bottom'>
+      <view class='key'>头像</view>
+      <view class='value'>
+        <image class='avatar' src='{{user.avatarUrl}}'></image>
+      </view>
+      <view class='icon'>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='key'>昵称</view>
+      <view class='value'>
+        <text>{{user.nickName}}</text>
+      </view>
+      <view class='icon'>
+      </view>
+    </view>
+  </view>
+
+  <view class='wrapper'>
+    <view class='item border_bottom'>
+      <view class='key'>性别</view>
+      <view class='value'>
+        <text wx:if="{{user.gender == 1}}">男</text>
+        <text wx:elif="{{user.gender == 2}}">女</text>
+        <text wx:else>未知</text>
+      </view>
+      <view class='icon'>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='key'>生日</view>
+      <view class='value'>
+        <picker mode="date" value="{{birthday}}" start="1980-01-01" end="2010-01-01" bindchange="handelBirthday">
+          <text>{{user.birthday ? user.birthday : '请选择'}}</text>
+        </picker>
+      </view>
+      <view class='icon'>
+        <text class='iconfont icon-right'></text>
+      </view>
+    </view>
+  </view>
+
+  <view class='wrapper'>
+    <view class='item border_bottom' data-url='/pages/user/info/school/school' catchtap='navigateTo'>
+      <view class='key'>学校</view>
+      <view class='value'>
+        <text>{{user.school ? user.school : '请选择'}}</text>
+      </view>
+      <view class='icon'>
+        <text class='iconfont icon-right'></text>
+      </view>
+    </view>
+    
+    <view class='item border_bottom'>
+      <view class='key'>年级</view>
+      <view class='value'>
+        <picker value="{{index}}" bindchange="handelGrade" range="{{grades}}">
+          <text>{{user.grade ? user.grade + ' 级' : '请选择'}}</text>
+        </picker>
+      </view>
+      <view class='icon'>
+        <text class='iconfont icon-right'></text>
+      </view>
+    </view>
+  </view>
+
+</view>
+
+<view id="tip" wx:if="{{dialogTip}}">
+  <text>{{tipText}}</text>
+</view>

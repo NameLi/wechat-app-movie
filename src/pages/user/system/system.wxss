@@ -1,0 +1,8 @@
+.wrapper {padding: 0 25rpx;}
+.item {height: 90rpx;line-height: 90rpx;display: flex;font-size: 14px;}
+
+.key {width: 200rpx;color: #333;}
+.val {flex: 1;color: #888;text-align: right;}
+
+
+.submit {position: fixed;bottom: 20px;left: 15px;right: 15px;height: 46px;line-height: 46px;text-align: center;border-radius: 2px;background: #FFA07A;font-size: 16px;color: #fff;letter-spacing: 2px;}

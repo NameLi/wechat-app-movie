@@ -1,0 +1,34 @@
+<template name="commentTpl">
+
+  <view class='t_comment' catchtap='showTool'>
+
+    <view class='t_avatar-wrapper'>
+      <image class='t_avatar' src='{{avatar}}'></image>
+    </view>
+    
+    <view class='t_main border_bottom'>
+
+      <view class='t_header'>
+        <view class='t_name'>{{name}}</view>
+
+        <view class="_stars" wx:if="{{stars}}">
+          <block wx:for="{{stars}}">
+            <image wx:if="{{item == 1}}" src="/images/star-all.png"></image>
+            <image wx:if="{{item == 0}}" src="/images/star-none.png"></image>
+          </block>
+        </view>
+        <!-- <view wx:else class='_stars_null'>用户未评分</view> -->
+   
+      </view>
+
+      <view class='t_content'>
+        <text>{{content}}</text>
+      </view>
+      <view class='t_tool'>
+        <view class='t_date'>{{create_time}}</view>
+        <view class='t_upper'>
+          <text class='iconfont icon-upper'></text>{{vote_count}}</view>
+      </view>
+    </view>
+  </view>
+</template>

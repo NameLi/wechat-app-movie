@@ -1,0 +1,52 @@
+{
+  "pages": [
+    "pages/index/index",
+    
+    "pages/search/search",
+    "pages/search/list/list",
+
+    "pages/movie/top/top",
+    "pages/movie/award/award",
+    "pages/movie/today/today",
+    "pages/movie/coming/coming",
+    "pages/movie/theater/theater",
+    "pages/movie/list/list",
+    "pages/movie/detail/detail",
+    "pages/movie/comment/comment",
+    "pages/movie/review/review",
+    "pages/movie/review/detail/detail",
+
+    "pages/actor/list/list",
+    "pages/actor/info/info",
+    "pages/actor/info/detail/detail",
+    "pages/actor/info/works/works",
+    
+    "pages/user/suggest/suggest",
+    "pages/user/aboutus/aboutus",
+    "pages/user/user",
+    "pages/user/info/info",
+    "pages/user/info/school/school"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "borderStyle": "black",
+    "selectedColor": "#f7af0c",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/images/home.png",
+        "selectedIconPath": "/images/home-actived.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "/images/user.png",
+        "selectedIconPath": "/images/user-actived.png"
+      }
+    ]
+  }
+}

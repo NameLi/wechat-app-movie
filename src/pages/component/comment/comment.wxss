@@ -1,0 +1,13 @@
+
+.t_comment {display: flex;padding: 15rpx 25rpx;}
+  .t_avatar-wrapper {width: 80rpx;}
+    .t_avatar {width: 60rpx;height: 60rpx;border-radius: 50%;}
+  .t_main {flex: 1;padding-bottom: 18rpx;}
+    .t_header {height: 20px;line-height: 20px;display: flex;}
+      .t_name {font-size: 13px;color: #666;flex: 1;}
+    .t_content {font-size: 15px;padding: 6px 0 2px;line-height: 22px;color: #444;flex: 1;word-break:break-all;}
+  .t_tool {padding: 6px 0 10px;color: #999;font-size: 12px;line-height: 18px;display: flex;}
+    .t_date {flex: 1;}
+    .icon-upper {font-size: 14px;padding-right: 4rpx;color: #333;}
+
+ .t_comment:last-of-type  .border_bottom::before {display: none;} 

@@ -1,0 +1,74 @@
+@import "/pages/component/movie-item/movie-item.wxss";
+
+/* loading */
+#loading {position: fixed;left: 0;right: 0;top: 0;bottom: 0;z-index: 9999;background: #fff;}
+.loading{animation: loading .5s ease-in-out;opacity: 0;}
+@keyframes loading{
+  from {opacity: 1;}
+  to {opacity: 0;}
+}
+
+.coverShow {animation: cover .15s ease-in-out;opacity: 1;}
+@keyframes cover{
+  from {opacity: .4;}
+  to {opacity: 1;}
+}
+
+#movie-wrapper {position: absolute;left: 0;top: 0;bottom: 260rpx;width: 100%;display: flex;justify-content:center;align-items:center;margin-top: -110rpx;}
+.movie {width: 400rpx;height: 590rpx;}
+.poster {width: 100%;height: 100%;}
+
+#app-info {position: absolute;left: 0;bottom: 0;height: 260rpx;width: 100%;display: flex;align-items:center;}
+.app-wrapper {height: 140rpx;display: flex;}
+
+.app-info-wrapper {width: 250rpx;text-align: center;}
+.app-logo {height: 100rpx;text-align: center;line-height: 75rpx;}
+.app-logo .icon-logo {border-radius: 50%;font-size: 100rpx;color: #06c299;}
+.app-name {font-size: 14px;color: #06c299;font-weight: bold;height: 40rpx;line-height: 40rpx;}
+
+.app-sign-wrapper {flex: 1;padding-right: 20rpx;text-align: justify;}
+.app-question {font-size: 14px;font-weight: bold;color: #333;height: 100rpx;}
+.app-answer {font-size: 13px;color: #777;height: 40rpx;line-height: 40rpx;}
+/* loading end */
+
+
+/* 搜索框 */
+.search-wrapper {position: fixed;left: 0;top: 0;width: 100%;height: 100rpx;z-index: 99;}
+.search {margin: 20rpx 28rpx;height: 60rpx;line-height: 60rpx;font-size: 12px;color: #555;padding: 0 12px;background: rgba(255, 255, 255, .6);border-radius: 20px;}
+.icon-search{font-size: 14px;padding-right: 3px;}
+
+
+/* 轮播图 */
+.swiper-container {position: relative;}
+.swiper-container swiper {height: 380rpx;} 
+.slide-image {width: 100%;height: 100%;}
+.ratio-wrapper {position: absolute;left: 0;width: 100%;top: 310rpx;height: 50rpx;overflow: hidden;}
+.ratio {margin: 0 -180rpx;height: 180rpx;border-radius: 100%;background: #fff;}
+
+
+/* 轮播图进度条 */
+.indicator-wrapper {position: absolute;left: 0;width: 100%;bottom: 10rpx;height: 4px;text-align: center;}
+.indicator-wrapper text{display: inline-block;margin: 0 2px;width: 40rpx;height: 4rpx;background: #fff;vertical-align: top;}
+.indicator-wrapper .dotfocus {background: #f8a52d;}
+
+
+/* 导航菜单 */
+.menu-wrapper {padding: 20rpx 0;border-bottom: 14px solid #f5f5f5;}
+.menu-container{display: flex;padding: 20rpx 30rpx;}
+.menu-item{flex: 1;text-align: center;}
+.menu-item .iconfont {width: 90rpx;height: 90rpx;line-height: 90rpx;font-size: 26px;border-radius: 8px;display: inline-block;}
+.icon1{background: linear-gradient(135deg, #e8fdec, #e8fdec);color: #32d784;}
+.icon2 {background: linear-gradient(135deg, #fdf7eb, #fdf7eb);color: #ff9902;}
+.icon3 {background: linear-gradient(135deg, #fbf5fb, #fbf5fb);color: #a570f3;}
+.icon4 {background: linear-gradient(135deg, #f1f8ff, #f1f8ff);color: #479eff;}
+.txt {color: #666;display: block;font-size: 12px;line-height: 26px;height: 20px;}
+
+/* 列表 */
+.list-wrapper {padding: 0;border-bottom: 14px solid #f5f5f5;}
+.list-header {padding-left: 20rpx;height: 100rpx;line-height: 100rpx;font-size: 14px;color: #555;display: flex;}
+.list-title {flex: 1;}
+.list-title text::before {content: " ";width: 6rpx;height: 13px;background: #f8a52d;display:inline-block;margin-bottom: -1px;margin-right: 6px;}
+.list-more {padding: 0 4px;font-size: 12px;}
+.icon-right {font-size: 12px;padding-left: 2px;}
+
+.notice-content {padding: 0 25rpx 0;margin-top: -4rpx;font-size: 14px;line-height: 26px;color: #666;padding-bottom: 30rpx;text-align: justify;}

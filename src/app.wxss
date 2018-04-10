@@ -1,0 +1,61 @@
+@import '/static/iconfont/iconfont.wxss';
+
+::-webkit-scrollbar{width: 0;height: 0;color: transparent;}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+  .border_top {position: relative;}
+  .border_top::before {display: block;content: " ";position: absolute;left: 0;top: 0;width: 100%;height: 1px;transform: scaleY(0.5);background: #dedede;}
+
+  .border_bottom {position: relative;}
+  .border_bottom::before {display: block;content: " ";position: absolute;left: 0;bottom: 0;width: 100%;height: 1px;transform: scaleY(0.5);background: #dedede;}
+}
+@media screen and (-webkit-min-device-pixel-ratio: 3) {
+  .border_top {position: relative;}
+  .border_top::before {display: block;content: " ";position: absolute;left: 0;top: 0;width: 100%;height: 1px;transform: scaleY(0.33333);background: #dedede;}
+
+  .border_bottom {position: relative;}
+  .border_bottom::before {display: block;content: " ";position: absolute;left: 0;bottom: 0;width: 100%;height: 1px;transform: scaleY(0.33333);background: #dedede;}
+}
+
+/* 超出点点点 */
+.ellipsis {overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+
+._common_wrapper{margin-top: 30rpx;width: 100%;background: #fff;}
+._header{height: 90rpx;line-height: 90rpx;padding: 0 25rpx;}
+._title{font-size: 16px;color: #333;}
+._subtitle {font-size: 12px;color: #777;height: 90rpx;}
+._subtitle .iconfont {padding-left: 2px;}
+
+.noMoreData {height: 35px;line-height: 30px;font-size: 12px;color: #999;text-align: center;}
+
+
+/* 评分样式 */
+._stars {height: 20px;line-height: 20px;}
+._stars image {padding-left: 1rpx;height: 12px;width: 12px;}
+._star-score{color: #1f3463;}
+._stars_null {font-size: 12px;color: #aaa;}
+
+._right {float: right;}
+._left {float: left;}
+
+/* 横向滚动样式 */
+.scrollX-wrapper {padding: 0 0 10rpx 25rpx;white-space: nowrap;width: 100%;box-sizing: border-box;}
+.scrollX-wrapper .movie-item:first-child {margin-left: 0;}
+.scrollX-wrapper .movie-item:last-child {margin-right: 50rpx;}
+
+
+/* 底部提示样式 */
+#tip {position: fixed;bottom: 60px;z-index: 9999;text-align: center;width: 100%;animation: tip .15s ease-in-out;}
+#tip text {background: rgba(0,0,0,0.7);color: #fff;padding: 22rpx 34rpx;font-size: 13px;border-radius: 2px;}
+@keyframes tip
+{from {bottom: 30px;}to {bottom: 60px;}}
+
+
+/* 骨架屏样式 */
+.skeleton_wrapper {position: fixed;left: 0;top: 0;width: 100%;height: 100%;background: #fff;overflow: hidden;z-index: 9999;}
+.skeleton_content {height: 100%;animation: skeleton 1.6s ease infinite alternate;}
+@keyframes skeleton{
+  from{opacity: 0.3;}
+  to {opacity: .96;}
+}
+.skeleton_item {height: 220rpx;margin: 10px 30rpx;background: #efefef;}

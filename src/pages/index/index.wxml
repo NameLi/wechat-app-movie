@@ -1,0 +1,150 @@
+<import src="/pages/component/movie-item/movie-item.wxml" />
+
+<!-- loading -->
+<view id="loading" class='{{loading ? "": "loading"}}' wx:if="{{loadingDistory}}">
+  <!-- cover -->
+  <view id='movie-wrapper' class='{{cover.bg_color ? "coverShow":""}}' style='background: #{{cover.bg_color}}'>
+    <view class='movie'>
+      <image class='poster' src='{{cover.poster}}' />
+    </view>
+  </view>
+  <!-- cover end-->
+
+  <view id='app-info'>
+
+    <view class='app-wrapper'>
+      <view class='app-info-wrapper'>
+        <view class='app-logo'>
+          <text class='iconfont icon-logo' style='color: #{{cover.bg_color}}'></text>
+        </view>
+        <view class='app-name' style='color: #{{cover.bg_color}}'>冰橙电影</view>
+      </view>
+
+      <view class='app-sign-wrapper'>
+        <view class='app-question'>
+          <text>世界上有那么多好电影，注定看不完，该怎么办？</text>
+        </view>
+        <view class='app-answer'>
+          <text>{{newstr}}</text>
+        </view>
+      </view>
+    </view>
+
+  </view>
+</view>
+<!-- /loading -->
+
+
+<view class='search-wrapper' style='background: rgba(255,255,255,{{searchAlpha}});'>
+  <view class='search' catchtap='navigateTo' data-url='/pages/search/search' style='background: {{searchAlpha>0.7?"rgba(173,173,173,.1)":""}}'>
+    <text class='iconfont icon-search'></text>请输入想要搜索的内容</view>
+</view>
+
+<!-- swiper -->
+<view class='swiper-container'>
+  <swiper autoplay="{{swiper.autoplay}}" interval="{{swiper.interval}}" duration="{{swiper.duration}}" bindchange="getSwiperIndex">
+    <block wx:for="{{swipers}}" wx:key="id">
+      <swiper-item>
+        <image src="{{item.src}}" class="slide-image" width="100%" height="100%" />
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <view class='indicator-wrapper'>
+    <text wx:for="{{swipers}}" class="{{index == swiper.currentDot ? 'dotfocus': ''}}"></text>
+  </view>
+</view>
+<!-- swiper end -->
+
+
+<!-- menu -->
+<view class='menu-wrapper'>
+  <view class='menu-container'>
+    <view class='menu-item' data-url="/pages/movie/list/list" catchtap='navigateTo'>
+      <text class='iconfont icon-list icon1'></text>
+      <text class='txt'>找影视</text>
+    </view>
+    <view class='menu-item' data-url="/pages/movie/top/top" catchtap='navigateTo'>
+      <text class='iconfont icon-top icon2'></text>
+      <text class='txt'>高分榜</text>
+    </view>
+    <view class='menu-item' data-url="/pages/movie/award/award" catchtap='navigateTo'>
+      <text class='iconfont icon-trophy icon3'></text>
+      <text class='txt'>奥斯卡</text>
+    </view>
+    <view class='menu-item' data-url="/pages/movie/today/today" catchtap='navigateTo'>
+      <text class='iconfont icon-today icon4'></text>
+      <text class='txt'>那年今日</text>
+    </view>
+  </view>
+</view>
+<!-- menu end -->
+
+
+<view class='list-wrapper' wx:if="{{notice.title}}">
+  <view class='list-header'>
+    <view class='list-title'>
+      <text>{{notice.title}}</text>
+    </view>
+  </view>
+  <view class='notice-content'>
+    <text decode="true" space="emsp">{{notice.content}}</text>
+  </view>
+</view>
+
+<view class='list-wrapper'>
+  <view class='list-header'>
+    <view class='list-title'>
+      <text>那年今日</text>
+    </view>
+    <view class='list-more' data-url="/pages/movie/today/today" catchtap='navigateTo'>
+      <text>共 {{today.count}} 部</text>
+      <text class='iconfont icon-right'></text>
+    </view>
+  </view>
+
+  <scroll-view class="scrollX-wrapper" scroll-x="true">
+    <block wx:for="{{today.movies}}">
+      <template is="movieItemTpl" data="{{...item}}" />
+    </block>
+  </scroll-view>
+
+</view>
+
+<view class='list-wrapper'>
+  <view class='list-header'>
+    <view class='list-title'>
+      <text>正在热映</text>
+    </view>
+    <view class='list-more' data-url="/pages/movie/theater/theater" catchtap='navigateTo'>
+      <text>共 {{theater.total}} 部</text>
+      <text class='iconfont icon-right'></text>
+    </view>
+  </view>
+
+  <scroll-view class="scrollX-wrapper" scroll-x="true">
+    <block wx:for="{{theater.data}}">
+      <template is="movieItemTpl" data="{{...item}}" />
+    </block>
+  </scroll-view>
+
+</view>
+
+<view class='list-wrapper'>
+  <view class='list-header'>
+    <view class='list-title'>
+      <text>即将上映</text>
+    </view>
+    <view class='list-more' data-url="/pages/movie/coming/coming" catchtap='navigateTo'>
+      <text>共 {{coming.total}} 部</text>
+      <text class='iconfont icon-right'></text>
+    </view>
+  </view>
+
+  <scroll-view class="scrollX-wrapper" scroll-x="true">
+    <block wx:for="{{coming.data}}">
+      <template is="movieItemTpl" data="{{...item}}" />
+    </block>
+  </scroll-view>
+
+</view>

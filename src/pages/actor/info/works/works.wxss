@@ -1,0 +1,6 @@
+ @import "/pages/component/movie-item/movie-item.wxss";
+
+.container {margin: 15rpx;}
+.movie-item {margin: 0 10rpx 50rpx;}
+.movie-poster {width: 220rpx;height: 308rpx;}
+.movie-poster .poster {width: 220rpx;height: 308rpx;}

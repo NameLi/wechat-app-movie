@@ -1,0 +1,11 @@
+.content {padding: 25rpx 30rpx;}
+.txt {font-size: 15px;color: #333;line-height: 26px;}
+.web-info {height: 300rpx;}
+.logo-wrapper {text-align: center;line-height: 200rpx;height: 200rpx;}
+.icon-logo {padding: 15rpx;border-radius: 50%;font-size: 110rpx;color: #ff9902;}
+.web-name {font-size: 20px;color: #ff9902;text-align: center;font-weight: 700;}
+
+.l-wrapper {padding-top: 60rpx;}
+.l-title {height: 30px;line-height: 30px;font-size: 16px;font-weight: 700;color: #444;}
+.l-content {font-size: 14px;line-height: 24px;color: #555;padding-top: 10rpx;}
+.l-clip {color: #36648B;}

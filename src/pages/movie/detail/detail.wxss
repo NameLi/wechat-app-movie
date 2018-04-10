@@ -1,0 +1,70 @@
+@import "/pages/component/movie-item/movie-item.wxss";
+@import "/pages/component/comment/comment.wxss";
+@import "/pages/component/review/review.wxss";
+@import "/pages/component/video/video.wxss";
+
+page {background: #f5f5f5;}
+
+#poster-wrapper {padding: 50rpx 0;width: 100%;height: 420rpx;text-align: center;}
+#poster {width: 270rpx;height: 400rpx;}
+
+#info {padding: 0 25rpx 10px;position: relative;background: #fff;}
+#info .title {height: 46px;line-height: 46px;font-size: 16px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+#info .star-wrapper {padding-bottom: 8px;}
+#info .star-wrapper .rating {font-size: 14px;margin-left: 8px;color: #f16c00;}
+#info .star-wrapper .rating-no {font-size: 14px;color: #888;}
+#info .info text {color: #999;font-size: 14px;}
+#info .save {position: absolute;right: 0;top: 0;z-index: 99; width: 52px;height: 40px;}
+#info .icon-save {width: 26px;height: 26px;padding: 10px;}
+
+.stars {display: inline-block;height: 20px;margin-top: 1px;vertical-align: top;}
+.stars image {padding-left: 1rpx;height: 16px;width: 16px;}
+.star-score{color: #1f3463;}
+
+/* 演员信息 START */
+.scrollX-wrapper {padding-bottom: 20rpx;}
+.actor-wrapper {margin: 0 10rpx;width: 200rpx;display: inline-block;text-align: center;vertical-align: top;}
+.actor-pic {width: 200rpx;height: 284rpx;border-radius: 4rpx;}
+.actor-wrapper:first-child {margin-left: 0;}
+.actor-wrapper:last-child {margin-right: 50rpx;}
+
+.act text{line-height: 16px;font-size: 12px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;display: block;}
+.act .name {color: #333;}
+.act {color: #999;}
+/* 演员信息 END */
+
+/*电影简介*/
+._content {padding: 0 25rpx 30rpx;font-size: 14px;line-height: 24px;color: #333;}
+.ellipsis_line_3 {display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;width: 100%;}
+/*电影简介*/
+
+
+.more-info {height: 85rpx;line-height: 85rpx;text-align: center;font-size: 14px;color: #f16c00;}
+
+/* 改写影评样式 */
+.review {padding: 30rpx 25rpx;margin: 0;box-shadow: 0 0 0 #fff;position: relative;}
+.review::before {display: block;content: " ";position: absolute;left: 25rpx;right: 25rpx;bottom: 0;height: 1px;transform: scaleY(0.5);background: #dedede;}
+.review:first-child{padding-top: 0;}
+.review:last-child::before{display: none;}
+
+
+/*模态框 详细信息*/
+@keyframes toTop{from {top: 100%;}to {top: 0;}}
+#fixedInfo {position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: 999;background: #fff;animation: toTop .25s ease-in-out;}
+.info-content {padding: 0 15px 70px;}
+.g_content {padding-top: 5px;}
+.g_header {height: 40px;line-height: 40px;}
+.g_title {font-size: 14px;font-weight: bold;color: #333;}
+.g_title::before {display: inline-block;content: "";width: 4px;height: 16px;background: #EE4000;margin: -2px 6px 0 0;vertical-align: middle;}
+.g_text {font-size: 14px;line-height: 28px;color: #444;}
+.item {height: 50px;line-height: 50px;display: flex;font-size: 14px;}
+.key {width: 50px;color: #666;}
+.val {color: #222;max-width: 510rpx;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.font10 {font-size: 10px;}
+.close-info {position: absolute;left: 0;bottom: 0;width: 100%;height: 60px;line-height: 60px;z-index: 999;color: rgba(0,0,0,0.3);font-size: 40px;text-align: center;background: #fff;}
+
+
+/* 骨架屏 */
+.skeleton_banner {height: 460rpx;margin: 25rpx;background: #efefef;}
+.skeleton_block {height: 220rpx;margin: 10px 25rpx;background: #efefef;}
+.skeleton_line {height: 50rpx;margin: 10px 25rpx;background: #efefef;}

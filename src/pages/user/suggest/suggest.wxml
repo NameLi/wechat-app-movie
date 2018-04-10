@@ -1,0 +1,12 @@
+<view class='content'>
+  <form bindsubmit="submitSuggest">
+    <view class='textarea-wrapper'>
+      <textarea class='textarea' auto-focus placeholder="请详细描述您遇到的问题，不低于10个字 (づ￣3￣)" maxlength="300" name="textarea" />
+    </view>
+    <button class='submit' form-type="submit">提交</button>
+  </form>
+</view>
+
+<view id="tip" wx:if="{{dialogTip}}">
+  <text>{{msg}}</text>
+</view>
