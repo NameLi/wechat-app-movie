@@ -4,3 +4,7 @@
 喜欢的话可以用微信扫码体验哦 (づ￣3￣)づ╭❤～
 
 ![二维码](https://github.com/NameLi/wechat-app-movie/blob/master/qrcode.jpg)
+
+
+## 使用方法
+将 https://api.ixook.com 域名添加到微信白名单
